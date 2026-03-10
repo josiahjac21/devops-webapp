@@ -1,0 +1,21 @@
+name: DevOps CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Step
+        run: echo "Build successful for josiahjac21/devops-webapp"
+
+      - name: List Files
+        run: ls
