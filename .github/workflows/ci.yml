@@ -17,5 +17,8 @@ jobs:
       - name: Build Step
         run: echo "Build successful for josiahjac21/devops-webapp"
 
-      - name: List Files
-        run: ls
+      - name: Send Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"CI Pipeline completed for josiahjac21/devops-webapp"}' \
+          ${{ secrets.SLACK_WEBHOOK }}
